@@ -47,20 +47,9 @@ router.get('/', function(req, res, next) {
 		//console.log(cb[0].file_id);
 		
 		var strHereDoc = heredoc.strip(function() {/*
-			Dear Sir,<br /><br />
-				Hello!<br />
-				How are you? I hope you are fine.<br />
-				My name is Nyein Pe. I am from Myanmar.<br /><br />
-				I have been working in Walen School for about 3 years.<br />
-				I have to manage the Amazon Web Services, Ubuntu server, <br />
-				download the data from server to the local servers.<br /><br />
-				
-				The reasons to quit are to get more challenges and get better opportunity.<br />
-				I am looking forward to hearing from you.
-
-				<br /><br /><br />
-				Best Regards,<br />
-				Nyein Pe */
+			say something
+			
+			 */
 		});
 
 		
