@@ -1,0 +1,24 @@
+extends layout
+
+
+block content
+    table(class='table table-striped')
+        thead
+            tbody
+            form(action='/upload_save', method='post', enctype="multipart/form-data")
+                tr
+                    td Name
+                    td
+                        input(type='text', name='txtName')
+                tr
+                    td Description
+                    td
+                        textarea(name="desc")
+                tr
+                    td File
+                    td
+                        input(type='file', name='fileUpload')
+                tr
+                    td a
+                    td
+                        input(type='submit', value='Save') 

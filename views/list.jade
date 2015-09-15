@@ -1,0 +1,44 @@
+extends layout
+
+
+
+block content
+    table(class='table table-striped')
+        tr
+            th No
+            th Title
+            th ApplyTimes
+        tbody
+            - id = 1
+            - results = typeof(jsonobj) != 'undenfined' ? jsonobj : {}
+            - each result in results
+                tr
+                    td #{id}
+                    td #{result.position}
+                    td #{result.TIMES}
+                    td
+                        a(href='/add?q=#{result.id}') Add
+                    td
+                        a(href='http://192.168.1.122:3000/delete?q=#{result.id}' onclick="return confirm('Are you sure you want to Delete?')") Delete
+                    td 
+                        a(href='/detail?q=#{result.id}') Detail
+                    td
+                        a(href='/apply?q=#{result.id}') Apply
+                    td
+                        a(href='/edit?q=#{result.id}') Edit
+                - id++
+   
+
+
+
+    - var count = totalPage
+    - for( var i = 1; i <= count; i++ )
+        a(href='/test?p=#{i}') #{i} |
+    
+
+//
+    - var id = 1
+    each val in ['a', 'b', 'c']
+        p #{val} #{id}
+        - id++
+

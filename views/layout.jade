@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/custom.js')
+    
+  body
+    - var classess = ['navbar', 'navbar-inverse', 'navbar-fixed-top']
+    nav(class=classess)
+        .container
+            // menu start
+            div.navbar-header
+                button(type='button', class='navbar-toggle collapsed', data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+                    span(class='sr-only') Toggle navigation
+                    span(class='icon-bar')
+                    span(class='icon-bar')
+                    span(class='icon-bar')
+                a(class='navbar-brand', href='#') Project Name
+        
+              
+            div(class='navbar-collapse collapse', id='navbar')
+                ul(class='nav navbar-nav')
+                    li(class='dropdown')
+                        a(data-toggle='dropdown', class='dropdown-toggle', href='#') Thai 
+                            span(class='caret')
+                                ul(role='menu', class='dropdown-menu')
+                                    li
+                                        a(href='/') Jobs DB
+                                        a(href='jobsthai') Jobs Thai
+                                        a(href='jobsbkk') Jobs Bkk
+                                        a(href='jobstopgun') Jobs Top Grun
+                                        a(href='jobswebbkk') Web Jobs Bkk
+
+                    li(class='dropdown')
+                        a(data-toggle='dropdown', class='dropdown-toggle', href='#') File
+                            span(class='caret')
+                                ul(role='menu', class='dropdown-menu')
+                                    li
+                                        a(href='/upload') Upload
+                                    li
+                                        a(href='/upload_list') List
+                    li
+                        a(href='list') List
+            // menu end
+
+    div.container
+        block content
+
+        script(src='http://localhost:35729/livereload.js')
+
+    .container
+        hr
+        footer
+            p &copy; 
+                script.
+                    document.writeln(new Date().getFullYear())
+

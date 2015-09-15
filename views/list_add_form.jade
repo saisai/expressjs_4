@@ -1,0 +1,37 @@
+extends layout
+
+
+block content
+    table(class='table table-striped')
+        thead
+            tbody
+            form(action='add_detail', method='post')
+                input(type='hidden', name='id', value='#{id}')
+                tr
+                    td Position 
+                    td 
+                        a(href='#{link}', target='_blank')=position
+                tr
+                    td Email
+                    td
+                        input(type='text', name='txtEmail')
+                        span(class="error")
+                tr
+                    td Description
+                    td
+                        textarea(name="desc")
+                tr
+                    td Salary
+                    td
+                        input(type='text', name='txtSalary')
+                tr
+                    td File
+                    td
+                        - results = typeof(jsonobj) != 'undenfined' ? jsonobj : {}
+                        select(name='selectFile')
+                            - each result in results
+                                option(value='#{result.id}') #{result.name}
+                tr
+                    td a
+                    td
+                        input(type='submit', value='Save') 

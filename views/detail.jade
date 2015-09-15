@@ -1,0 +1,21 @@
+extends layout
+
+
+block content
+    table(class='table table-striped')
+        thead
+            tbody
+            - result = typeof(jsonobj) != 'undefined' ? jsonobj : {}
+            tr
+                td Position
+                td 
+                    a(href='#{result.sitelink}', target='_blank')=result.position
+            tr
+                td Email
+                td=result.email
+            tr
+                td Description
+                td=result.description
+            tr
+                td Salary
+                td=result.salary

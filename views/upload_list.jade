@@ -1,0 +1,23 @@
+extends layout
+
+
+block content
+    table(class='table table-striped')
+        thead
+            tr
+                th No
+                th Name
+                th File 
+            tbody
+            - results = typeof(jsonobj) != 'undefined' ? jsonobj : {}
+            - each result in results
+                tr
+                    td=result.id
+                    td=result.name
+                    td=result.filename
+                    td
+                        a(href='') Edit
+                    td
+                        a(href='/delete_file?q=#{result.id}' onclick="return confirm('Are you sure you want to Delete?')" ) Delete
+                    td
+                        a(href='') Detail

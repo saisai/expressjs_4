@@ -1,0 +1,25 @@
+extends layout
+
+include mixins/pagination
+
+block content
+    table(class='table table-striped')
+        thead
+            tr
+                th No
+                th Title
+                th Update
+            tbody
+                - each result in jobsdbs
+                    tr
+                        td=result.id
+                        td
+                            a(href=result.link, target='_blank')=result.title
+                        td=result.time
+                        td #{moment(result.created_date).format('YYYY-MM-DD HH:MM:SS')} 
+                        td
+                            input(type='hidden', id='link_#{result.id}', value='#{result.link}' )
+                            input(type='hidden', id='title_#{result.id}', value='#{result.title}' )
+                            button(class='test-add-link', id='#{result.id}') Add
+
+    mixin paginate(pagination)
